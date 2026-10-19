@@ -7,15 +7,13 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Pasamos la configuración nativa de Nitro para sobreescribir el objetivo de Cloudflare
+  nitro: {
+    preset: "netlify-edge", // Cambia el destino interno de Cloudflare a Netlify Edge
+  },
   tanstackStart: {
-    // 1. Cambiamos el comportamiento de Nitro para generar archivos estáticos puros
-    deploymentPreset: "static", 
-    // 2. Forzamos el prerrenderizado de las rutas en archivos HTML individuales
-    prerender: {
-      enabled: true,
-      crawlLinks: true, // Rastrea automáticamente todas tus páginas internas
-    },
-    // Mantén esto si Lovable lo requiere para sus envoltorios de error
+    // Si deseas mantener el SSR dinámico (recomendado para TanStack Start), elimina el preset static.
+    // En su lugar, el preset de Nitro se encargará de todo de forma nativa.
     server: { entry: "server" },
   },
 });
