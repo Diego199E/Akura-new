@@ -6,7 +6,7 @@ export default defineConfig({
     deploymentPreset: "static", 
     // 2. Le ordenamos generar archivos HTML reales para cada una de tus rutas
     prerender: {
-      enabled: true,
+      enabled: false,
       crawlLinks: true,
     },
   },
