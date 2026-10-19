@@ -1,8 +1,8 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
   status = 200
-  to = "/.netlify/edge-functions/server"
+  to = "/.netlify/functions/server"
