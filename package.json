@@ -4,12 +4,14 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "nitro dev",
-    "build": "nitro build",
-    "preview": "nitro preview",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
+
+
   "overrides": {
     "rolldown": "1.2.1"
   },
